@@ -1,0 +1,202 @@
+\documentclass[12pt,nonacm,natbib=false]{acmart}
+\settopmatter{printfolios=false,printccs=false,printacmref=false}
+\usepackage[maxnames=1,minnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
+\makeatletter\let\@authorsaddresses\@empty\makeatother
+\usepackage[T1]{fontenc}
+\usepackage[tt=false,type1=true]{libertine}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{ffcode}
+\usepackage{tabularx}
+\usepackage{href-ul}
+\usepackage{xcolor}
+\usepackage{paralist}
+\usepackage{microtype}
+\title{Academic Writing Best Practices}
+\author{Yegor Bugayenko}
+\addbibresource{main.bib}
+\begin{document}
+\pagenumbering{gobble}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{32pt}
+\setlength{\parskip}{6pt}
+\date{}
+\maketitle
+
+\section{Intro}
+
+Read this:
+\begin{itemize}
+\item \href{https://developers.google.com/tech-writing/overview}{Technical Writing Courses by Google}
+\end{itemize}
+
+\section{Preamble}
+
+Use \href{https://ctan.org/pkg/acmart?lang=en}{\ff{acmart}} document style and read their \href{https://www.acm.org/publications/taps/latex-best-practices}{Best Practices}. Start the document with this:
+
+\begin{ffcode}
+\documentclass[11pt,nonacm,natbib=false]{acmart}
+\settopmatter{printfolios=false,printccs=false,printacmref=false}
+\usepackage[maxnames=1,minnames=1,natbib=true,
+  citestyle=authoryear,bibstyle=authoryear]{biblatex}
+\addbibresource{main.bib}
+\end{ffcode}
+
+Use \href{https://ctan.org/pkg/biblatex?lang=en}{\ff{biblatex}} and \href{https://ctan.org/pkg/biber?lang=en}{\ff{biber}}, here is \href{https://tex.stackexchange.com/a/25702/1449}{why}. Place your citations into \ff{main.bib} file. Later in the document print the bibliography with \ff{\char`\\printbibliography} command.
+
+\section{Typography}
+
+Use single dash inside words, e.g.: \ff{micro-service}.
+Use double ``endash'' between numbers, e.g.: \ff{pages 15-{}-28}.
+Use triple ``emdash'' between words avoiding spaces, e.g.: \ff{We-{}-{}-since you ask-{}-{}-disagree}.
+
+\section{Fonts}
+
+Prefer \ff{\char`\\emph} over \ff{\char`\\textit}, here is \href{https://tex.stackexchange.com/a/1983/1449}{why}.
+
+Avoid \ff{\char`\\textbf} and all other font changing commands at all cost. Here is \href{https://www.yegor256.com/2019/05/21/dont-improvise.html}{my rant} on this very problem of technical people trying to make their products look visually attractive and failing miserably.
+
+\section{Colors}
+
+Don't use them. Keep your documents strictly black-on-white.
+
+\section{Code Snippets}
+
+Use \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package, which allows writing both code snippets and fixed-width-font in-paragraph text blocks.
+
+\section{Tables}
+
+Prefer a list over a table and a table over a graph.
+
+Align text cells by left,
+center headings,
+and align cells with numbers by right;
+\href{https://ux.stackexchange.com/questions/24066/what-is-the-best-practice-for-data-table-cell-content-alignment}{here} is a more detailed discussion. Here is an example of a table properly formatted:
+
+\begin{multicols}{2}
+\setlength{\parskip}{0pt}
+\small
+\raggedcolumns
+\begin{verbatim}
+\begin{tabularx}{\columnwidth}
+  {lr>{\raggedright\arraybackslash}X}
+\toprule
+Name & Age & Role \\
+\midrule
+Jeff & 35 & The creator of the main 
+algorithm and the owner of the code \\
+Sarah & 38 & The architect of all 
+microservices and the developer of 
+Java modules \\
+\bottomrule
+\end{tabularx}
+\end{verbatim}
+
+\columnbreak
+
+\begin{tabularx}{\columnwidth}
+  {lr>{\raggedright\arraybackslash}X}
+\toprule
+Name & Age & Role \\
+\midrule
+Jeff & 35 & The creator of the main algorithm and the owner of the code \\
+Sarah & 38 & The architect of all microservices and the developer of Java modules \\
+\bottomrule
+\end{tabularx}
+\end{multicols}
+
+Put all tables into \ff{table} environment:
+
+\begin{ffcode}
+\begin{table}
+.. content goes here
+\caption{Caption}
+\label{tab:my-table}
+\end{table}
+\end{ffcode}
+
+
+\section{Bullets}
+
+Prefer in-paragraph itemization over a vertical one and use \href{https://ctan.org/pkg/paralist}{\ff{paralist}}:
+
+\begin{multicols}{2}
+\setlength{\parskip}{0pt}
+\small
+\raggedcolumns
+\begin{verbatim}
+The following sources were analyzed:
+\begin{inparaenum}[1)]
+\item GitHub,
+\item Google, and
+\item Stack Overflow
+\end{inparaenum}
+\end{verbatim}
+
+\columnbreak
+
+\raggedright
+The following sources were
+analyzed:
+\begin{inparaenum}[1)]
+\item GitHub,
+\item Google, and
+\item Stack Overflow
+\end{inparaenum}
+\end{multicols}
+
+In all itemization use \href{https://en.wikipedia.org/wiki/Serial_comma}{Oxford comma}, as in the list above before the ``and'' (provided there are more than two items).
+
+\section{Citations}
+
+This code demonstrates how to use \href{https://libguides.murdoch.edu.au/APA}{APA}-style citations with \href{https://journals.aas.org/natbib/}{natbib} commands:
+
+\begin{multicols}{2}
+\setlength{\parskip}{0pt}
+\small
+\raggedcolumns
+\begin{verbatim}
+In \citeyear{west2004} it was
+already mentioned 
+by \citeauthor{west2004}
+that object-oriented design is 
+declarative~\citep{west2004}.
+Later, \citet{eolang2021}
+suggested a new programming
+language in this paradigm.
+\end{verbatim}
+
+\columnbreak
+
+\raggedright
+In~\citeyear{west2004} it was already 
+mentioned by~\citeauthor{west2004} that
+object-oriented design is 
+declarative~\citep{west2004}.
+Later, \citet{eolang2021}
+suggested a new programming
+language in this paradigm.
+
+\AtNextBibliography{\small}
+\setlength\bibitemsep{3pt}
+{\raggedright\printbibliography[heading=none]}
+\end{multicols}
+
+Place \ff{\~} (tilde) symbol before \ff{\char`\\citep} to avoid line breaks.
+
+Prefer \ff{\char`\\citet} over \ff{\char`\\citep}, making references more obvious, as in the second sentence in the example above.
+
+Don't type author names or reference titles directly, only use \ff{\char`\\cite*} commands.
+
+\section{References}
+
+The references in \ff{.bib} file are usually imported from Google Scholar or similar sources. Unfortunately, such imports often contain typos and mistakes. Check the items printed in the ``References'' section for the following:
+
+\begin{itemize}
+    \item Year is not printed twice;
+    \item Dashes in titles are printed as \ff{-{}-{}-} without surrounding spaces;
+    \item All nouns and verbs are capitalized in all titles.
+\end{itemize}
+
+\end{document}
