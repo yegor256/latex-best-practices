@@ -12,21 +12,27 @@
 \usepackage{xcolor}
 \usepackage{paralist}
 \usepackage{microtype}
-\title{Academic Writing Best Practices}
+\title{Academic Writing in \LaTeX: \texorpdfstring{\\}{} Best and Worst Practices}
 \author{Yegor Bugayenko}
 \addbibresource{main.bib}
-\begin{document}
 \pagenumbering{gobble}
 \raggedbottom
 \setlength{\parindent}{0pt}
 \setlength{\columnsep}{32pt}
 \setlength{\parskip}{6pt}
+\setlength{\headheight}{18pt}
+\setlength{\footskip}{18pt}
+
+\begin{abstract}
+    This is a humble attempt to summarize most typical mistakes we make while writing academic papers in \LaTeX{} and most important recommendations. Each suggestion or a mistake takes a short paragraph of description right here and also may suggest looking into a more detailed explanation in some other online resource. We recommend, before submitting your paper to a conference or a journal you go through this list of mistakes and make sure none of them are present in your paper.
+\end{abstract}
+
+\begin{document}
+\pagestyle{plain}
 \date{}
 \maketitle
 
-\section{Intro}
-
-Read this:
+Beforehand, we suggest you read these:
 \begin{itemize}
 \item \href{https://developers.google.com/tech-writing/overview}{Technical Writing Courses by Google}
 \end{itemize}
@@ -45,11 +51,16 @@ Use \href{https://ctan.org/pkg/acmart?lang=en}{\ff{acmart}} document style and r
 
 Use \href{https://ctan.org/pkg/biblatex?lang=en}{\ff{biblatex}} and \href{https://ctan.org/pkg/biber?lang=en}{\ff{biber}}, here is \href{https://tex.stackexchange.com/a/25702/1449}{why}. Place your citations into \ff{main.bib} file. Later in the document print the bibliography with \ff{\char`\\printbibliography} command.
 
+\section{Headings}
+
+Capitalize all nouns and verbs in headings, \href{https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case}{here} is why and how.
+
 \section{Typography}
 
 Use single dash inside words, e.g.: \ff{micro-service}.
 Use double ``endash'' between numbers, e.g.: \ff{pages 15-{}-28}.
 Use triple ``emdash'' between words avoiding spaces, e.g.: \ff{We-{}-{}-since you ask-{}-{}-disagree}.
+Read \href{https://tex.stackexchange.com/questions/3819/dashes-vs-vs}{this}.
 
 \section{Fonts}
 
@@ -59,20 +70,21 @@ Avoid \ff{\char`\\textbf} and all other font changing commands at all cost. Here
 
 \section{Colors}
 
-Don't use them. Keep your documents strictly black-on-white.
+Don't use them. Keep your documents strictly black-on-white. Read \href{https://academia.stackexchange.com/questions/13616/are-there-good-reasons-to-avoid-using-color-in-research-papers}{more} about this.
 
 \section{Code Snippets}
 
 Use \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package, which allows writing both code snippets and fixed-width-font in-paragraph text blocks.
 
-\section{Tables}
+\section{Figures and Tables}
+
+Don't force positioning in figures and tables, like \ff{\char`\\begin\{table\}[h]}. Instead, just \ff{\char`\\begin\{table\}}.
+
+Make sure the explanation you place into \ff{\char`\\caption} is detailed enough to let your reader understand the content without searching the text; see how it's done in \href{https://arxiv.org/abs/2203.07814}{this paper}.
 
 Prefer a list over a table and a table over a graph.
 
-Align text cells by left,
-center headings,
-and align cells with numbers by right;
-\href{https://ux.stackexchange.com/questions/24066/what-is-the-best-practice-for-data-table-cell-content-alignment}{here} is a more detailed discussion. Here is an example of a table properly formatted:
+Align text cells by left, center headings, and align cells with numbers by right; \href{https://ux.stackexchange.com/questions/24066/what-is-the-best-practice-for-data-table-cell-content-alignment}{here} is a more detailed discussion. Here is an example of a table properly formatted:
 
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
@@ -84,10 +96,10 @@ and align cells with numbers by right;
 \toprule
 Name & Age & Role \\
 \midrule
-Jeff & 35 & The creator of the main 
+Jeff & 35 & The creator of the main
 algorithm and the owner of the code \\
-Sarah & 38 & The architect of all 
-microservices and the developer of 
+Sarah & 38 & The architect of all
+microservices and the developer of
 Java modules \\
 \bottomrule
 \end{tabularx}
@@ -158,9 +170,9 @@ This code demonstrates how to use \href{https://libguides.murdoch.edu.au/APA}{AP
 \raggedcolumns
 \begin{verbatim}
 In \citeyear{west2004} it was
-already mentioned 
+already mentioned
 by \citeauthor{west2004}
-that object-oriented design is 
+that object-oriented design is
 declarative~\citep{west2004}.
 Later, \citet{eolang2021}
 suggested a new programming
@@ -170,9 +182,9 @@ language in this paradigm.
 \columnbreak
 
 \raggedright
-In~\citeyear{west2004} it was already 
+In~\citeyear{west2004} it was already
 mentioned by~\citeauthor{west2004} that
-object-oriented design is 
+object-oriented design is
 declarative~\citep{west2004}.
 Later, \citet{eolang2021}
 suggested a new programming
@@ -183,7 +195,7 @@ language in this paradigm.
 {\raggedright\printbibliography[heading=none]}
 \end{multicols}
 
-Place \ff{\~} (tilde) symbol before \ff{\char`\\citep} to avoid line breaks.
+Place \ff{\~} (tilde) symbol before \ff{\char`\\citep} to avoid line breaks, \href{https://tex.stackexchange.com/questions/41264/what-is-the-difference-in-citing-referencing-with-or-without-tilde}{see why}.
 
 Prefer \ff{\char`\\citet} over \ff{\char`\\citep}, making references more obvious, as in the second sentence in the example above.
 
@@ -198,5 +210,7 @@ The references in \ff{.bib} file are usually imported from Google Scholar or sim
     \item Dashes in titles are printed as \ff{-{}-{}-} without surrounding spaces;
     \item All nouns and verbs are capitalized in all titles.
 \end{itemize}
+
+Use \href{https://github.com/Kingsford-Group/biblint}{biblint} to check your \ff{.bib} file.
 
 \end{document}
