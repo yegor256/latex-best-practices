@@ -53,7 +53,7 @@ Use \href{https://ctan.org/pkg/acmart?lang=en}{\ff{acmart}} document style and r
 \addbibresource{main.bib}
 \end{ffcode}
 
-Use \href{https://ctan.org/pkg/biblatex?lang=en}{\ff{biblatex}} and \href{https://ctan.org/pkg/biber?lang=en}{\ff{biber}}, here is \href{https://tex.stackexchange.com/a/25702/1449}{why}. Place your citations into \ff{main.bib} file. Later in the document print the bibliography with \ff{\char`\\printbibliography} command.
+Use \href{https://ctan.org/pkg/biblatex}{\ff{biblatex}} and \href{https://ctan.org/pkg/biber}{\ff{biber}}, here is \href{https://tex.stackexchange.com/a/25702/1449}{why}. Place your citations into \ff{main.bib} file. Later in the document print the bibliography with \ff{\char`\\printbibliography} command.
 
 \section{Headings}
 
@@ -164,9 +164,13 @@ analyzed:
 
 In all itemization use \href{https://en.wikipedia.org/wiki/Serial_comma}{Oxford comma}, as in the list above before the ``and'' (provided there are more than two items).
 
+\section{References}
+
+Don't use \ff{\char`\\ref}, use \ff{\char`\\cref} instead from \href{https://ctan.org/pkg/cleveref}{\ff{cleveref}} package.
+
 \section{Citations}
 
-This code demonstrates how to use \href{https://libguides.murdoch.edu.au/APA}{APA}-style citations with \href{https://journals.aas.org/natbib/}{natbib} commands:
+This code demonstrates how to use \href{https://libguides.murdoch.edu.au/APA}{APA}-style citations with \href{https://journals.aas.org/natbib/}{\ff{natbib}} commands:
 
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
