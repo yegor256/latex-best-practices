@@ -1,0 +1,13 @@
+_docshots/
+_minted-main/
+main.aux
+main.bbl
+main.bcf
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.blg
+main.pdf
+main.pyg
+main.run.xml
