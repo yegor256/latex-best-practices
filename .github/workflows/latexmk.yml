@@ -15,7 +15,7 @@ jobs:
       - run: |
           mkdir gh-pages
           cp main.pdf gh-pages
-      - uses: JamesIves/github-pages-deploy-action@v4.4.1
+      - uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           branch: gh-pages
           folder: gh-pages
