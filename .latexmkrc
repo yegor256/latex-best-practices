@@ -1,4 +1,4 @@
-$pdflatex = 'pdflatex %O -interaction=errorstopmode -halt-on-error -shell-escape %S';
-$latex = 'latex %O -interaction=errorstopmode -halt-on-error -shell-escape %S';
+$pdflatex = 'pdflatex -interaction=batchmode -halt-on-error -shell-escape %O %S';
+$latex = 'latex -interaction=batchmode -halt-on-error -shell-escape %O %S';
 $clean_ext = 'crumbs';
 $success_cmd = 'texqc && texsc';

@@ -1,4 +1,4 @@
-\documentclass[12pt,nonacm,natbib=false]{acmart}
+\documentclass[11pt,nonacm,natbib=false]{acmart}
 \settopmatter{printfolios=false,printccs=false,printacmref=false}
 \usepackage[maxnames=1,minnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 \makeatletter\let\@authorsaddresses\@empty\makeatother
@@ -14,7 +14,7 @@
 \usepackage{xcolor}
 \usepackage{paralist}
 \usepackage{microtype}
-\title{Academic Writing in \LaTeX: \texorpdfstring{\\}{} Best and Worst Practices}
+\title{\includegraphics[width=1in]{hat.pdf} \\ Academic Writing in \LaTeX: \texorpdfstring{\\}{} Best and Worst Practices}
 \author{Yegor Bugayenko}
 \addbibresource{main.bib}
 \pagenumbering{gobble}
@@ -75,7 +75,8 @@ Capitalize all nouns and verbs in headings, \href{https://apastyle.apa.org/style
 \hint
 Use single dash inside words, e.g.: \ff{micro-service}.
 Use double ``endash'' between numbers, e.g.: \ff{pages 15-{}-28}.
-Use triple ``emdash'' between words avoiding spaces, e.g.: \ff{We-{}-{}-since you ask-{}-{}-disagree}.
+Use triple ``emdash'' between words avoiding spaces, e.g.: \\
+\ff{We-{}-{}-since you ask-{}-{}-disagree}.\\
 Read \href{https://tex.stackexchange.com/questions/3819/dashes-vs-vs}{this}.
 
 \section{Fonts}
@@ -99,7 +100,7 @@ Use \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package, which allows writin
 \section{Figures and Tables}
 
 \hint
-Don't force positioning in figures and tables, like \ff{\char`\\begin\{table\}[h]}. Instead, just \ff{\char`\\begin\{table\}}.
+Don't force positioning in figures and tables, like \ff{\char`\\begin\{table\}[h]}. Instead, just wrap them in \ff{\char`\\begin\{table\}}.
 
 \hint
 Make sure the explanation you place into \ff{\char`\\caption} is detailed enough to let your reader understand the content without searching the text; see how it's done in \href{https://arxiv.org/abs/2203.07814}{this paper}.
