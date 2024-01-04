@@ -3,7 +3,7 @@ docker:
 install: |
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none install xstring totpages environ hyperxmp ifmtarg ncctools comment biblatex
+  sudo tlmgr --verify-repo=none install xstring totpages environ hyperxmp ifmtarg ncctools comment biblatex href-ul
 merge:
   script: |
     latexmk -pdf
