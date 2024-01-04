@@ -3,7 +3,7 @@ docker:
 install: |
   sudo tlmgr option repository ctan
   sudo tlmgr --verify-repo=none update --self
-  sudo tlmgr --verify-repo=none install xstring totpages environ hyperxmp ifmtarg manyfoot
+  sudo tlmgr --verify-repo=none install xstring totpages environ hyperxmp ifmtarg ncctools
 merge:
   script: |
     latexmk -pdf
