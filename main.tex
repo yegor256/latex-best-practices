@@ -1,11 +1,13 @@
-\documentclass[11pt,nonacm,natbib=false]{acmart}
+\documentclass[11pt,nonacm]{acmart}
+\usepackage{silence}
+  \WarningFilter{acmart}{\vspace should only be used to provide space above/below}
 \settopmatter{printfolios=false,printccs=false,printacmref=false}
-\usepackage[maxnames=1,minnames=1,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 \makeatletter\let\@authorsaddresses\@empty\makeatother
 \usepackage[T1]{fontenc}
 \usepackage{href-ul}
 \usepackage[tt=false,type1=true]{libertine}
 \usepackage{amsmath}
+\usepackage{natbib}
 \usepackage{multicol}
 \usepackage[nocn]{ffcode}
 \usepackage{tabularx}
@@ -14,9 +16,12 @@
 \usepackage{xcolor}
 \usepackage{paralist}
 \usepackage{microtype}
-\title{\includegraphics[width=1in]{hat.pdf} \\ Academic Writing in \LaTeX: \texorpdfstring{\\}{} Best and Worst Practices}
+\title{%
+  \texorpdfstring
+    {\includegraphics[width=1in]{hat.pdf} \\ Academic Writing in \LaTeX: \texorpdfstring{\\}{} Best and Worst Practices}
+    {Academic Writing in LaTeX: Best and Worst Practices}}
 \author{Yegor Bugayenko}
-\addbibresource{main.bib}
+\usepackage{bibcop}
 \pagenumbering{gobble}
 \raggedbottom
 \setlength{\parindent}{0pt}
@@ -44,6 +49,7 @@ and contribute your ideas through a pull request.
 Beforehand, we suggest you read these:
 \begin{itemize}
 \item \href{https://developers.google.com/tech-writing/overview}{Technical Writing Courses by Google}
+\item Book by \citep{zobel2004writing}
 \end{itemize}
 
 \hint
@@ -234,5 +240,9 @@ The references in \ff{.bib} file are usually imported from Google Scholar or sim
 
 \hint
 Use \href{https://github.com/Kingsford-Group/biblint}{biblint} to check your \ff{.bib} file.
+
+{\raggedright
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{main}}
 
 \end{document}

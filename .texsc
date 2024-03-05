@@ -1,0 +1,11 @@
+--pws=aspell.en.pws
+--ignore=href:pp
+--ignore=qte:oppp
+--ignore=ffcode
+--ignore=ff
+--ignore=tabular:p
+--ignore=nospell
+--ignore=citet,citep,bibentry
+--ignore=settopmatter
+--ignore=documentclass:op
+--ignore=WarningFilter:pp
