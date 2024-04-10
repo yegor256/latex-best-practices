@@ -7,8 +7,9 @@
 \usepackage[tt=false,type1=true]{libertine}
 \usepackage{amsmath}
 \usepackage{natbib}
+\usepackage{doi}
 \usepackage{multicol}
-\usepackage[nocn]{ffcode}
+\usepackage[nocn,noframes]{ffcode}
 \usepackage{tabularx}
 \usepackage[runs=2]{docshots}
   \docshotPrerequisite{main.bib}
@@ -194,7 +195,8 @@ Use \href{https://ctan.org/pkg/href-ul}{\ff{href-ul}} package and then \ff{\char
 \section{References}
 
 \hint
-Don't use \ff{\char`\\ref}, use \ff{\char`\\cref} instead from \href{https://ctan.org/pkg/cleveref}{\ff{cleveref}} package.
+Don't use \ff{\char`\\ref}, use \ff{\char`\\cref}, instead,
+from the \href{https://ctan.org/pkg/cleveref}{\ff{cleveref}} package.
 
 \section{Citations}
 
@@ -220,13 +222,16 @@ programming language in this paradigm.
 \end{docshot}
 
 \hint
-Place \ff{\~} (tilde) symbol before \ff{\char`\\citep} to avoid line breaks, \href{https://tex.stackexchange.com/questions/41264/what-is-the-difference-in-citing-referencing-with-or-without-tilde}{see why}.
+Place \ff{\~} (tilde) symbol before the \ff{\char`\\citep},
+in order to avoid line breaks,
+\href{https://tex.stackexchange.com/questions/41264/what-is-the-difference-in-citing-referencing-with-or-without-tilde}{see why}.
 
 \hint
 Don't use \ff{\char`\\cite}, only \ff{\char`\\citep} and \ff{\char`\\citet}.
 
 \hint
-Prefer \ff{\char`\\citet} over \ff{\char`\\citep}, making references more obvious, as in the second sentence in the example above.
+Prefer \ff{\char`\\citet} over the \ff{\char`\\citep},
+making references more obvious, as in the second sentence in the example above.
 
 \hint
 Don't type author names or reference titles directly, only use \ff{\char`\\cite*} commands.
@@ -238,20 +243,17 @@ Remember that \href{https://www.ece.ucdavis.edu/~jowens/biberrors.html}{brackets
 Don't cite Web pages or any other URLs.
 
 \hint
-Add \href{https://ctan.org/pkg/bibcop}{bibcop} to your document, to make sure \ff{.bib} file is properly formatted.
+Add \href{https://ctan.org/pkg/bibcop}{bibcop} to your document,
+to make sure the \ff{.bib} file is properly formatted.
 
 \section{References}
 
 \hint
-The references in \ff{.bib} file are usually imported from Google Scholar or similar sources. Unfortunately, such imports often contain typos and mistakes. Check the items printed in the ``References'' section for the following:
-\begin{itemize}
-    \item Year is not printed twice;
-    \item Dashes in titles are printed as \ff{-{}-{}-} without surrounding spaces;
-    \item All nouns and verbs are capitalized in all titles.
-\end{itemize}
-
-\hint
-Use \href{https://github.com/Kingsford-Group/biblint}{biblint} to check your \ff{.bib} file.
+The references in the \ff{.bib} file are usually imported from
+Google Scholar or similar sources. Unfortunately, such imports
+often contain typos and mistakes.
+Use \href{https://github.com/yegor256/bibcop}{bibcop}
+to check your \ff{.bib} file.
 
 {\raggedright
 \bibliographystyle{ACM-Reference-Format}
