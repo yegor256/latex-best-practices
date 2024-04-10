@@ -1,7 +1,6 @@
 \documentclass[11pt,nonacm]{acmart}
 \usepackage{silence}
   \WarningFilter{acmart}{\vspace should only be used to provide space above/below}
-\settopmatter{printfolios=false,printccs=false,printacmref=false}
 \makeatletter\let\@authorsaddresses\@empty\makeatother
 \usepackage[T1]{fontenc}
 \usepackage{href-ul}
@@ -24,6 +23,7 @@
 \usepackage{bibcop}
 \pagenumbering{gobble}
 \raggedbottom
+\tolerance=2000
 \setlength{\parindent}{0pt}
 \setlength{\columnsep}{32pt}
 \setlength{\parskip}{6pt}
@@ -34,7 +34,13 @@
 \newcommand{\hint}{\refstepcounter{hint}\S\arabic{hint}: }
 
 \begin{abstract}
-This is a humble attempt to summarize most typical mistakes we make while writing academic papers in \LaTeX{} and most important recommendations. Each suggestion or a mistake takes a short paragraph of description right here and also may suggest looking into a more detailed explanation in some other online resource. We recommend, before submitting your paper to a conference or a journal, go through this list of mistakes and make sure none of them are present in your paper.
+This is a humble attempt to summarize most typical mistakes we
+make while writing academic papers in \LaTeX{} and most important
+recommendations. Each suggestion or a mistake takes a short paragraph of
+description right here and also may suggest looking into a more detailed
+explanation in some other online resource. We recommend, before submitting
+your paper to a conference or a journal, go through this list of mistakes and
+make sure none of them are present in your paper.
 \end{abstract}
 
 \begin{document}
@@ -106,10 +112,16 @@ Use \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package, which allows writin
 \section{Figures and Tables}
 
 \hint
-Don't force positioning in figures and tables, like \ff{\char`\\begin\{table\}[h]}. Instead, just wrap them in \ff{\char`\\begin\{table\}}.
+Don't force positioning in figures and tables, like
+\ff{\char`\\begin\{table\}[h]}. Instead, just wrap them
+in \ff{\char`\\begin\{table\}}.
 
 \hint
-Make sure the explanation you place into \ff{\char`\\caption} is detailed enough to let your reader understand the content without searching the text; see how it's done in \href{https://arxiv.org/abs/2203.07814}{this paper}.
+As recommended by \citet{clancy2020}, make sure
+the explanation you place into \ff{\char`\\caption} is
+detailed enough to let your reader understand the content without
+searching the text; see how it's done in
+\href{https://arxiv.org/abs/2203.07814}{this paper}.
 
 \hint
 Prefer a list over a table and a table over a graph.
