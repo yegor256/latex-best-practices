@@ -46,7 +46,7 @@ make sure none of them are present in your paper.
 
 \begin{document}
 \pagestyle{plain}
-\date{}
+\date{\today}
 \maketitle
 
 \LaTeX{} sources of this document you can find in
@@ -103,7 +103,7 @@ Avoid \ff{\char`\\textbf} and all other font changing commands at all cost. Here
 \section{Colors}
 
 \hint
-Don't use them. Keep your documents strictly black-on-white. Read \href{https://academia.stackexchange.com/questions/13616/are-there-good-reasons-to-avoid-using-color-in-research-papers}{more} about this.
+Do not use them. Keep your documents strictly black-on-white. Read \href{https://academia.stackexchange.com/questions/13616/are-there-good-reasons-to-avoid-using-color-in-research-papers}{more} about this.
 
 \section{Code Snippets}
 
@@ -113,7 +113,7 @@ Use \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package, which allows writin
 \section{Figures and Tables}
 
 \hint
-Don't force positioning in figures and tables, like
+Do not force positioning in figures and tables, like
 \ff{\char`\\begin\{table\}[h]}. Instead, just wrap them
 in \ff{\char`\\begin\{table\}}.
 
@@ -121,7 +121,7 @@ in \ff{\char`\\begin\{table\}}.
 As recommended by \citet{clancy2020}, make sure
 the explanation you place into \ff{\char`\\caption} is
 detailed enough to let your reader understand the content without
-searching the text; see how it's done in
+searching the text; see how it is done in
 \href{https://arxiv.org/abs/2203.07814}{this paper}.
 
 \hint
@@ -195,7 +195,7 @@ Use \href{https://ctan.org/pkg/href-ul}{\ff{href-ul}} package and then \ff{\char
 \section{References}
 
 \hint
-Don't use \ff{\char`\\ref}, use \ff{\char`\\cref}, instead,
+Do not use \ff{\char`\\ref}, use \ff{\char`\\cref}, instead,
 from the \href{https://ctan.org/pkg/cleveref}{\ff{cleveref}} package.
 
 \section{Citations}
@@ -227,20 +227,20 @@ in order to avoid line breaks,
 \href{https://tex.stackexchange.com/questions/41264/what-is-the-difference-in-citing-referencing-with-or-without-tilde}{see why}.
 
 \hint
-Don't use \ff{\char`\\cite}, only \ff{\char`\\citep} and \ff{\char`\\citet}.
+Do not use \ff{\char`\\cite}, only \ff{\char`\\citep} and \ff{\char`\\citet}.
 
 \hint
 Prefer \ff{\char`\\citet} over the \ff{\char`\\citep},
 making references more obvious, as in the second sentence in the example above.
 
 \hint
-Don't type author names or reference titles directly, only use \ff{\char`\\cite*} commands.
+Do not type author names or reference titles directly, only use \ff{\char`\\cite*} commands.
 
 \hint
 Remember that \href{https://www.ece.ucdavis.edu/~jowens/biberrors.html}{brackets are not words}.
 
 \hint
-Don't cite Web pages or any other URLs.
+Do not cite Web pages or any other URLs.
 
 \hint
 Add \href{https://ctan.org/pkg/bibcop}{bibcop} to your document,
