@@ -103,19 +103,22 @@ Avoid \ff{\char`\\textbf} and all other font changing commands at all cost. Here
 \section{Colors}
 
 \hint
-Do not use them. Keep your documents strictly black-on-white. Read \href{https://academia.stackexchange.com/questions/13616/are-there-good-reasons-to-avoid-using-color-in-research-papers}{more} about this.
+Do not use them. Keep your documents strictly black-on-white.
+Read \href{https://academia.stackexchange.com/questions/13616/are-there-good-reasons-to-avoid-using-color-in-research-papers}{more} about this.
 
 \section{Code Snippets}
 
 \hint
-Use \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package, which allows writing both code snippets and fixed-width-font in-paragraph text blocks.
+Use the \href{https://ctan.org/pkg/ffcode}{\ff{ffcode}} package,
+which allows writing both code snippets and fixed-width-font
+in-paragraph text blocks.
 
 \section{Figures and Tables}
 
 \hint
 Do not force positioning in figures and tables, like
 \ff{\char`\\begin\{table\}[h]}. Instead, just wrap them
-in \ff{\char`\\begin\{table\}}.
+in the \ff{\char`\\begin\{table\}}.
 
 \hint
 As recommended by \citet{clancy2020}, make sure
@@ -152,7 +155,7 @@ Java modules \\
 \end{docshot}
 
 \hint
-Put all tables into \ff{table} environment:
+Put all tables into the \ff{table} environment:
 \begin{ffcode}
 \begin{table}
 .. content goes here
@@ -162,12 +165,14 @@ Put all tables into \ff{table} environment:
 \end{ffcode}
 
 \hint
-In \ff{acmart} document class, use |\begin{table*}| in order to render it whole-page wide.
+In the \ff{acmart} document class, use the |\begin{table*}|,
+in order to render it whole-page wide.
 
 \section{Bullets}
 
 \hint
-Prefer in-paragraph itemization over a vertical one and use \href{https://ctan.org/pkg/paralist}{\ff{paralist}}:
+Prefer in-paragraph itemization over a vertical one and use
+the \href{https://ctan.org/pkg/paralist}{\ff{paralist}} package:
 \begin{docshot}
 \documentclass{article}
 \usepackage[paperwidth=3in]{geometry}
@@ -185,23 +190,26 @@ and
 \end{docshot}
 
 \hint
-In all itemization use \href{https://en.wikipedia.org/wiki/Serial_comma}{Oxford comma}, as in the list above before the ``and'' (provided there are more than two items).
+In all itemization use \href{https://en.wikipedia.org/wiki/Serial_comma}{Oxford comma},
+as in the list above before the ``and'' (provided there are more than two items).
 
 \section{URLs}
 
 \hint
-Use \href{https://ctan.org/pkg/href-ul}{\ff{href-ul}} package and then \ff{\char`\\href} command.
+Use the \href{https://ctan.org/pkg/href-ul}{\ff{href-ul}}
+ package and then the \ff{\char`\\href} command.
 
 \section{References}
 
 \hint
-Do not use \ff{\char`\\ref}, use \ff{\char`\\cref}, instead,
+Do not use the \ff{\char`\\ref}. Instead, use the \ff{\char`\\cref}
 from the \href{https://ctan.org/pkg/cleveref}{\ff{cleveref}} package.
 
 \section{Citations}
 
 \hint
-This code demonstrates how to use \href{https://libguides.murdoch.edu.au/APA}{APA}-style citations with \href{https://journals.aas.org/natbib/}{\ff{natbib}} commands:
+This code demonstrates how to use \href{https://libguides.murdoch.edu.au/APA}{APA}-style
+citations with \href{https://journals.aas.org/natbib/}{\ff{natbib}} commands:
 \docshotAfter{biber $2}
 \begin{docshot}
 \documentclass{article}
@@ -234,13 +242,25 @@ Prefer \ff{\char`\\citet} over the \ff{\char`\\citep},
 making references more obvious, as in the second sentence in the example above.
 
 \hint
-Do not type author names or reference titles directly, only use \ff{\char`\\cite*} commands.
+Do not type author names or reference titles directly,
+only use \ff{\char`\\cite*} commands.
 
 \hint
 Remember that \href{https://www.ece.ucdavis.edu/~jowens/biberrors.html}{brackets are not words}.
 
 \hint
-Do not cite Web pages or any other URLs.
+Do not cite Web pages or any other URLs. However, if you need to do this,
+use the following format in the \ff{.bib} file:
+
+\begin{ffcode}
+@misc{bugayenko2019blog0521,
+  author = {Bugayenko, Yegor},
+  title = {{Please, Don't Improvise}},
+  howpublished = {\url{https://www.yegor256.com/190521.html}},
+  year = {2019},
+  note = {[Online; accessed 09-04-2024]}
+}
+\end{ffcode}
 
 \hint
 Add \href{https://ctan.org/pkg/bibcop}{bibcop} to your document,
