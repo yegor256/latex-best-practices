@@ -155,17 +155,27 @@ Java modules \\
 \end{docshot}
 
 \hint
-Put all tables into the \ff{table} environment:
+Put all tables into the \ff{table} environment (the \ff{\char`\\caption} goes on top):
 \begin{ffcode}
 \begin{table}
-.. content goes here
 \caption{Caption}
 \label{tab:my-table}
+.. content goes here
 \end{table}
 \end{ffcode}
 
 \hint
-In the \ff{acmart} document class, use the |\begin{table*}|,
+Put all tables into the \ff{figure} environment (the \ff{\char`\\caption} stands at the bottom):
+\begin{ffcode}
+\begin{figure}
+.. content goes here
+\caption{The caption}
+\label{fig:my-figure}
+\end{figure}
+\end{ffcode}
+
+\hint
+In the \ff{acmart} document class, use the |\begin{table*}| and |\begin{figure*}| (with a trailing asterisk),
 in order to render it whole-page wide.
 
 \section{Bullets}
