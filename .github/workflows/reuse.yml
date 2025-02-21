@@ -21,26 +21,18 @@
 # SOFTWARE.
 ---
 # yamllint disable rule:line-length
-name: latexmk
+name: reuse
 'on':
   push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 jobs:
-  build:
+  reuse:
     timeout-minutes: 15
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get install --yes python3-pygments && sudo pip3 install pygments
-      - run: sudo apt-get install --yes ghostscript
-      - uses: yegor256/latexmk-action@0.15.0
-        with:
-          opts: -pdf
-          depends: DEPENDS.txt
-      - run: |
-          mkdir gh-pages
-          cp main.pdf gh-pages
-      - uses: JamesIves/github-pages-deploy-action@v4.7.3
-        with:
-          branch: gh-pages
-          folder: gh-pages
-          clean: false
+      - uses: fsfe/reuse-action@v5
