@@ -18,14 +18,13 @@ path = [
     ".gitattributes",
     ".gitignore",
     ".gitleaksignore",
-    ".latexmkrc",
     ".pdd",
-    ".texsc",
     ".xcop",
     "DEPENDS.txt",
     "Gemfile.lock",
     "README.md",
     "aspell.en.pws",
+    "rc",
     "renovate.json",
 ]
 precedence = "override"

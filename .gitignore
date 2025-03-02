@@ -1,13 +1,16 @@
+.DS_Store
+.idea/
 _docshots/
 _minted-main/
 main.aux
 main.bbl
 main.bcf
+main.blg
 main.fdb_latexmk
 main.fls
 main.log
 main.out
-main.blg
 main.pdf
 main.pyg
 main.run.xml
+node_modules/
