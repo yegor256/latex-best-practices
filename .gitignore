@@ -1,7 +1,7 @@
-.DS_Store
-.idea/
 _docshots/
 _minted-main/
+.DS_Store
+.idea/
 main.aux
 main.bbl
 main.bcf
